@@ -1,0 +1,5 @@
+1. Single Responsibility Principle - Каждый класс отвечает только за одно действие (Program - готовит к запуску программу, AppService - регистрирует зависимости, Model - логика, ModelData - данные, ModelGenerator - инициализация случайных данных, ViewConsoleMenu - первоначальное меню, ViewConsoleGame - представление игры через консоль терминала, Presenter взаимодействие между логикой и представлением  сообщение между модулями, отдельные настройки из DI конфигурации делать не стал, уже масло масленное какое - то)
+2. Open/Closed Principle -  потомок ModelDataInterval расширяет функционал базового ModelData, чтобы можно было угадать в доверительном интервале, не меняя его 
+3. Liskov Substitution Principle - в Model в поле типа IModelData внедряется потомок ModelData (в Program можно раскомментарить //.AddTransient<IModelData..>() - принцип работы не изменится)
+4. Interface Segregation Principle - класс GameLogic реализует множество интрфейсов (IRandom,ILogic,...)
+5. Dependency Inversion Principle - используется внедрение зависимостей в классе AppService 
